@@ -7,8 +7,12 @@
     "start": "electron .",
     "pretest": "eslint src/*.js src/lib",
     "test": "jasmine",
+
     "dist:winlinux": "build -wl --x64",
-    "dist:mac": "build -m --x64"
+    "dist:mac": "build -m --x64",
+    
+    "zip:winlinux": "zip -r dist/linux-unpacked.zip dist/linux-unpacked && zip -r dist/win-unpacked.zip dist/win-unpacked",
+    "zip:mac": "zip -r dist/mac-unpacked.zip dist/mac-unpacked"
   },
   "repository": "https://github.com/Microsoft/VoTT",
   "keywords": [

@@ -38,6 +38,11 @@ before_deploy:
     else
       npm run dist:mac
     fi
+  - |
+    if [ "$TRAVIS_OS_NAME" == "linux" ]; then 
+      npm run zip:winlinux
+    else
+      npm run zip:mac
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
@@ -49,6 +54,9 @@ deploy:
       - "dist/vott-win.exe"
       - "dist/vott-linux.snap"
       - "dist/vott-mac.dmg"
+      - "dist/linux-unpacked.zip"
+      - "dist/win-unpacked.zip"
+      - "dist/mac-unpacked.zip"
     skip_cleanup: true
     on:
       tags: true
