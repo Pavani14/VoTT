@@ -43,6 +43,7 @@ before_deploy:
       npm run zip:winlinux
     else
       npm run zip:mac
+    fi
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
